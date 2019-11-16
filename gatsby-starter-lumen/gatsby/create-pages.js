@@ -46,7 +46,7 @@ const createPages = async ({ graphql, actions }) => {
       }
     }
   `);
-
+console.log(result.data);
   const { edges } = result.data.allMarkdownRemark;
 
   _.each(edges, (edge) => {
