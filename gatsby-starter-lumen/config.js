@@ -16,10 +16,6 @@ module.exports = {
       path: '/'
     },
     {
-      label: '关于我',
-      path: '/pages/about'
-    },
-    {
       label: '联系我',
       path: '/pages/contacts'
     },
@@ -31,7 +27,7 @@ module.exports = {
   author: {
     name: '小水',
     photo: '/photo.jpg',
-    bio: '欢迎欢迎热烈欢迎',
+    bio: 'Welcome to my personal blog. I will share articles more than technique. hope you guys like it',
     contacts: {
       email: 'Angeliaxuchang@gmail.com',
       twitter: 'Angeliaxuchang',
