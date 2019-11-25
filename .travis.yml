@@ -2,13 +2,10 @@ language: node_js
 node_js:
   - '10'
 install:
-  - npm install -g codecov
+  - npm i
 script:
-  - yarn install
-  - yarn lint
-  - yarn test:coverage --runInBand --no-cache
-  - yarn test --runInBand --no-cache
-  - codecov
+  - npm run build
 cache:
   directories:
     - node_modules
+after_success: #构建成功
