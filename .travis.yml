@@ -16,3 +16,4 @@ before_install:
   -in tencentCloud.enc -out ~/.ssh/tencentCloud -d
 
 after_success: #构建成功
+  console.log(1)
