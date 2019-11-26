@@ -16,6 +16,6 @@ before_install:
   -in tencentCloud.enc -out ~/.ssh/tencentCloud -d
 after_success:
 - tar -cvf public.tar public/
-- scp public.tar root@49.232.0.208:/
+
 - ssh root@49.232.0.208
 - tar -xvf public.tar
