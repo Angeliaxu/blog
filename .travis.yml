@@ -12,8 +12,6 @@ addons:
   ssh_known_hosts:
     - 49.232.0.208 
 before_install:
-  - openssl aes-256-cbc -K $encrypted_efe2ee7fba5d_key -iv $encrypted_efe2ee7fba5d_iv
+- openssl aes-256-cbc -K $encrypted_efe2ee7fba5d_key -iv $encrypted_efe2ee7fba5d_iv
   -in tencentCloud.enc -out ~/.ssh/tencentCloud -d
-
-after_success: #构建成功
-  console.log(1)
+after_success:
