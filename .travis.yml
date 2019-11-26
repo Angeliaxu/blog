@@ -2,9 +2,9 @@ language: node_js
 node_js:
 - '10'
 install:
-#- npm i
+- npm i
 script:
-#- npm run build
+- npm run build
 cache:
   directories:
   - node_modules
@@ -16,9 +16,8 @@ before_install:
   -in id_rsa.enc -out ~/.ssh/id_rsa -d
 after_success:
 - chmod 600 ~/.ssh/id_rsa
-#- tar -czvf public.tar public/
-- ll 
-#- scp public.tar root@49.232.0.208:/
-#- ssh root@49.232.0.208
-#- cd /
-#- tar -xzvf public.tar
+- tar -czvf public.tar public/ 
+- scp config.js root@49.232.0.208:/
+- ssh root@49.232.0.208
+- cd /
+- tar -xzvf public.tar
