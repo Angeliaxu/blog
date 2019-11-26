@@ -1,11 +1,14 @@
 language: node_js
 node_js:
-  - '10'
+- '10'
 install:
-  - npm i
+- npm i
 script:
-  - npm run build
+- npm run build
 cache:
   directories:
-    - node_modules
-after_success: #构建成功
+  - node_modules
+after_success: 
+before_install:
+- openssl aes-256-cbc -K $encrypted_efe2ee7fba5d_key -iv $encrypted_efe2ee7fba5d_iv
+  -in tencentCloud.enc -out ~\/.ssh/tencentCloud -d
