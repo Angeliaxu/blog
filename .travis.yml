@@ -17,7 +17,7 @@ before_install:
 after_success:
 - chmod 600 ~/.ssh/id_rsa
 - tar -czvf public.tar public/ 
-- scp config.js root@49.232.0.208:/
+- scp public.tar root@49.232.0.208:/
 - ssh root@49.232.0.208
 - cd /
 - tar -xzvf public.tar
