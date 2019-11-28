@@ -2,6 +2,7 @@
 title: Css GPU Animation
 date: "2019-11-24"
 template: "post"
+draft: false
 slug: "/post/cssGPUAnimation/"
 category: "CSS"
 tags: 
