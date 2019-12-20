@@ -132,5 +132,5 @@ payload里面包含了分层图像，层的大小、偏移量、动画数据等�
 * video，canvas、iframe元素
 * 通过animation或者transition 改变transform或者opacity
 * position：fixed
-* winll-change
+* will-change
 * filter
