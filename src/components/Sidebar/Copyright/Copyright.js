@@ -7,8 +7,11 @@ type Props = {
 };
 
 const Copyright = ({ copyright }: Props) => (
-  <div className={styles['copyright']}>
-    {copyright}
+  <div>
+    <div className={styles['copyright']}>
+      {copyright}
+    </div>
+    <div className={styles['copyright']}>京ICP备19052487号-1</div>
   </div>
 );
 

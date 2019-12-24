@@ -3,9 +3,9 @@
 module.exports = {
   url: 'https://lumen.netlify.com',
   pathPrefix: '/',
-  title: 'Blog by Angelia Xu',
+  title: '小水',
   subtitle: '',
-  copyright: '© All rights reserved.',
+  copyright: '©2019 xuchang. All rights reserved.',
   disqusShortname: '',
   postsPerPage: 4,
   googleAnalyticsId: 'UA-73379983-2',
@@ -27,7 +27,7 @@ module.exports = {
   author: {
     name: '小水',
     photo: '/photo.jpg',
-    bio: 'Welcome to my personal blog. I will share articles more than technique. hope you guys like it',
+    bio: '救救孩子吧，学不动了。呜呜呜呜呜~~~~~~~~~~~',
     contacts: {
       email: 'Angeliaxuchang@gmail.com',
       twitter: 'Angeliaxuchang',
