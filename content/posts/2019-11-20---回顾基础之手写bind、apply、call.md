@@ -5,11 +5,29 @@ template: "post"
 draft: false
 slug: "/post/handwritting-bind/"
 category: "JavaScript"
-tags: 
-    - "basic JavaScript"
+tags:
+  - "basic JavaScript"
 description: "手写一个bind函数"
 socialImage: "/media/42-line-bible.jpg"
 ---
+
+# apply 与 call 源码
+
+apply 与 call 源码 98%一样，不一样之处在于传参的方式
+
+```
+Function.prototype.apply=function(context,args){
+    const symbolFn = Symbol('fn');
+    context = context || window
+    context[symbolFn] = this;
+    let result = context[symbolFn](...args);
+    delete context[symbolFn]
+    return result
+}
+```
+
+# bind 源码
+
 ```
 function Person(name, age) {
     this.name =name;
@@ -30,7 +48,7 @@ console.log(child);
 child.say()
 
 1. 返回一个新函数，上下文为传进去的。
-2. 当新函数被new的时候，原型指向被bind的函数
+2. 当新函数被new的时候，原型指向被bind的函数也即是Person
 
 function bind(context) {
     let _this = this;

@@ -5,15 +5,16 @@ template: "post"
 draft: false
 slug: "/post/vueofkeepalive/"
 category: "Vue"
-tags: 
-    - "Vue"
+tags:
+  - "Vue"
 description: "在Vue中，需要保存组件的状态，在切换回之前组件的时候，该组件还是上一次渲染时的效果，这时候就需要vue提供的keep-alive组件来进行包裹。为什么keep-alive具有这种功能呢？接下来就看看keep-alive的内部实现。"
 socialImage: "/media/42-line-bible.jpg"
 ---
 
-在Vue中，需要保存组件的状态，在切换回之前组件的时候，该组件还是上一次渲染时的效果，这时候就需要vue提供的keep-alive组件来进行包裹。keep-alive一般用来包裹动态组件`<component/>`和路由组件`<router-view/>`。
+在 Vue 中，需要保存组件的状态，在切换回之前组件的时候，该组件还是上一次渲染时的效果，这时候就需要 vue 提供的 keep-alive 组件来进行包裹。keep-alive 一般用来包裹动态组件`<component/>`和路由组件`<router-view/>`。
 
-接下来看keep-alive的实现，其中缓存组件主要是在render函数中。
+接下来看 keep-alive 的实现，其中缓存组件主要是在 render 函数中。
+
 ```
 export default {
   name: 'keep-alive',
@@ -66,7 +67,7 @@ export default {
       ) {
         return vnode
       }
-        
+
       const { cache, keys } = this
       // 生成key值
       const key: ?string = vnode.key == null
@@ -98,6 +99,27 @@ export default {
 ```
 
 总结：
-1.  keep-alive组件里面使用cache对象来缓存组件
-2.  keep-alive在render函数中实现是否存取组件
+keep-alive 主要使用 LRU （最近使用原则）算法来实现缓存组件：主要思想是：在缓存一定的情况下，加入新的东西置换出最近未使用的页面，下面是对 LRU 的具体实现。
 
+```
+  function LRU(size) {
+      this.map = new Map();
+      this.size = size;
+  }
+  LRU.prototype.add = function (key, value) {
+    if (this.map.size > this.size) {
+      // 超出缓存限制，删除不常用的key
+      this.map.delete(this.map.keys().next().value);
+    }
+    this.map.set(key, value);
+  };
+  LRU.prototype.get = function (key) {
+    if (!this.map.has(key)) {
+      return -1;
+    }
+    let value = this.map.get(key);
+    this.map.delete(key);
+    this.map.set(ket, value);
+    return value;
+  };
+```
