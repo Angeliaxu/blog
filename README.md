@@ -7,7 +7,7 @@
 ## 1. JS API 源码编程题
 
 - [call、apply、bind 实现](https://angeliablock.cn/post/handwritting-bind/) ✅
-- [instanceof、new 操作符实现]()❌
+- [instanceof、new 操作符实现]() ✅
 - [Promise 实现]() ❌
 - [拍平数组，数组求和]()❌
 - [实现斐波那契数列]()❌

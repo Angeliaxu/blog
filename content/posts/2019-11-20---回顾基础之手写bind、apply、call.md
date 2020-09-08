@@ -11,7 +11,7 @@ description: "手写一个bind函数"
 socialImage: "/media/42-line-bible.jpg"
 ---
 
-# apply 与 call 源码
+### apply 与 call 源码
 
 apply 与 call 源码 98%一样，不一样之处在于传参的方式
 
@@ -26,7 +26,7 @@ Function.prototype.apply=function(context,args){
 }
 ```
 
-# bind 源码
+### bind 源码
 
 ```
 function Person(name, age) {
