@@ -1,6 +1,6 @@
 ---
 title: 一个bug引发的浏览器layers思考
-date: "2020-12-7"
+date: "2022-2-7"
 template: "post"
 draft: false
 slug: "/post/browser-layers"
