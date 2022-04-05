@@ -13,7 +13,7 @@ socialImage: "/media/42-line-bible.jpg"
 
 本周在进行技术分享会上，同事分享了技术栈的升级操作，其中关于“为什么在import 或者 export 要加上type？”这个问题上没有得到解答，去看了看相关的的文档与解答，这就来说说why。 
 
-首先看看关于这个问题的一个[https://github.com/webpack/webpack/issues/7378](issue)：大致的意思是在同时引入type与常量的时候，webpack找不到导出type的地方，导致报错。原因可以通过[https://github.com/webpack/webpack/issues/7378](这里)了解到：ts会在编译的时候把interface和type去掉，类似于下面这些👇🏻：
+首先看看关于这个问题的一个[issue](https://github.com/webpack/webpack/issues/7378)：大致的意思是在同时引入type与常量的时候，webpack找不到导出type的地方，导致报错。原因可以通过[这里](https://github.com/webpack/webpack/issues/7378)了解到：ts会在编译的时候把interface和type去掉，类似于下面这些👇🏻：
 
 编译前
 ```
