@@ -67,6 +67,6 @@ import type { SomeThing } from "./some-module.js";
 
 export type { SomeThing };
 ```
-开发者明确的知道上面导入导出是一个类型声明，TS也可以放心的消除掉，相关的TS配置选项是importsNotUsedAsValues，另外值得注意的一点是有些类型声明可以当做值来使用，如果使用了type预发，只能当做type使用。
+开发者明确的知道上面导入导出是一个类型声明，TS也可以放心的消除掉，相关的TS配置选项是importsNotUsedAsValues，另外值得注意的一点是有些类型声明可以当做值来使用，如果使用了type语法，只能当做type使用。
 
 总结：新增的type导入导出语法是为了解决：基于ts有import elision机制导致某些副作用会被消除掉，为了让开发者明确的知道当前导入导出是类型还是值，更规范的去约束语法，减少bug的产生。
