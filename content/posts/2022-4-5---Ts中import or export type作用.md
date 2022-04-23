@@ -1,5 +1,5 @@
 ---
-title: Ts中import or export type作用
+title: TS中import or export type作用
 date: "2022-4-5"
 template: "post"
 draft: false
